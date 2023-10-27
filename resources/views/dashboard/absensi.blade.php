@@ -67,6 +67,12 @@ $setting = App\Models\Utility::settings();
                     @if (empty($employeeAttendance) || $employeeAttendance->clock_out != '00:00:00')
                     <!-- Tambahkan elemen div untuk menampilkan peta -->
                     <div id="map" style="width: 100%; height: 200px;"></div>
+                    <!-- <embed style='object-fit:cover;' width="400px" height="400px" src="src" id="map" /> -->
+                    <!-- <iframe width="450" height="250" frameborder="0" style="border:0"
+                        referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/view
+                        ?key=AIzaSyD_7AU1pVekCxM9B_sYj1e2gM8mcqdMs94&center=LAT, LONG&zoom=18&maptype=satellite"
+                        id="map" allowfullscreen>
+                    </iframe> -->
 
                     <input type="text" name="latitude" id="latitude" value="Teks yang tidak dapat diubah" readonly>
                     <input type="text" name="longitude" id="longitude" value="Teks yang tidak dapat diubah" readonly>
@@ -629,7 +635,8 @@ function sendData(latitude, longitude) {
     xhr.send(data);
 }
 </script>
-<!-- <script async defer src="https://www.google.com/maps/embed/v1/view?key=AIzaSyD_7AU1pVekCxM9B_sYj1e2gM8mcqdMs94&q=$latitude,$longitude">
+<!-- <script async defer
+    src="https://www.google.com/maps/embed/v1/view?key=AIzaSyD_7AU1pVekCxM9B_sYj1e2gM8mcqdMs94&q=$latitude,$longitude&zoom=18&maptype=satellite">
 </script> -->
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_7AU1pVekCxM9B_sYj1e2gM8mcqdMs94&callback=initMap"></script>
