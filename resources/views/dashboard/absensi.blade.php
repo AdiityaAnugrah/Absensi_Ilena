@@ -14,6 +14,7 @@ $setting = App\Models\Utility::settings();
 @endsection --}}
 
 @section('content')
+
 @if (session('status'))
 <div class="alert alert-success" role="alert">
     {{ session('status') }}
@@ -51,7 +52,6 @@ $setting = App\Models\Utility::settings();
             </div>
         </div> -->
 <div class="col-xxl-6">
-
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_7AU1pVekCxM9B_sYj1e2gM8mcqdMs94"></script> -->
     <div class="card" style="height: auto;">
         <div class="card-header">
@@ -633,9 +633,12 @@ function sendData(latitude, longitude) {
 <!-- <script async defer
     src="https://www.google.com/maps/embed/v1/view?key=AIzaSyD_7AU1pVekCxM9B_sYj1e2gM8mcqdMs94&q=$latitude,$longitude&zoom=18&maptype=satellite">
 </script> -->
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_7AU1pVekCxM9B_sYj1e2gM8mcqdMs94&callback=initMap"></script>
+<!-- <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_7AU1pVekCxM9B_sYj1e2gM8mcqdMs94&callback=initMap"></script> -->
 
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3bsDl1xddiU_w38hA-fsGea8kWsp5uJM&callback=initMap"
+    type="text/javascript"></script>
 
 <style>
 #latitude,
@@ -644,6 +647,8 @@ function sendData(latitude, longitude) {
     /* Menyembunyikan elemen input */
 }
 </style>
+
+
 
 <script>
 function initMap() {
@@ -657,7 +662,7 @@ function initMap() {
                     lat: latitude,
                     lng: longitude
                 },
-                zoom: 24 //untuk mengatur kedekatan maps
+                zoom: 18 //untuk mengatur kedekatan maps
             };
 
             var map = new google.maps.Map(document.getElementById("map"), mapOptions);
